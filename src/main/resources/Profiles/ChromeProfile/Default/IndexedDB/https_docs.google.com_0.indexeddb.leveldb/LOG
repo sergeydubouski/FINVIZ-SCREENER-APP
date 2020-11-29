@@ -1,8 +1,0 @@
-2020/11/28-20:23:15.965 26a0 Reusing MANIFEST C:\Users\serge\AppData\Local\Google\Chrome\User Data\Default\IndexedDB\https_docs.google.com_0.indexeddb.leveldb/MANIFEST-000001
-2020/11/28-20:23:15.965 26a0 Recovering log #2334
-2020/11/28-20:23:15.966 26a0 Reusing old log C:\Users\serge\AppData\Local\Google\Chrome\User Data\Default\IndexedDB\https_docs.google.com_0.indexeddb.leveldb/002334.log 
-2020/11/28-20:23:33.358 dd8 Level-0 table #2338: started
-2020/11/28-20:23:33.358 dd8 Level-0 table #2338: 0 bytes OK
-2020/11/28-20:23:33.363 dd8 Delete type=0 #2334
-2020/11/28-20:23:33.364 dd8 Manual compaction at level-0 from (begin) .. (end); will stop at (end)
-2020/11/28-20:23:33.364 dd8 Manual compaction at level-1 from (begin) .. (end); will stop at (end)

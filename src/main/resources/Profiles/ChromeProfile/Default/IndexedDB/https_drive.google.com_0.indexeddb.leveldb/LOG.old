@@ -1,6 +1,0 @@
-2020/11/24-21:50:41.849 303c Reusing MANIFEST C:\Users\serge\AppData\Local\Google\Chrome\User Data\Default\IndexedDB\https_drive.google.com_0.indexeddb.leveldb/MANIFEST-000001
-2020/11/24-21:50:41.850 303c Recovering log #14
-2020/11/24-21:50:41.850 303c Reusing old log C:\Users\serge\AppData\Local\Google\Chrome\User Data\Default\IndexedDB\https_drive.google.com_0.indexeddb.leveldb/000014.log 
-2020/11/24-21:50:48.001 4ec Level-0 table #20: started
-2020/11/24-21:50:48.052 4ec Level-0 table #20: 1773155 bytes OK
-2020/11/24-21:50:48.058 4ec Delete type=0 #14
