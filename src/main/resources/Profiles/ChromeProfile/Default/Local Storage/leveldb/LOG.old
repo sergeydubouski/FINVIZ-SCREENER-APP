@@ -1,0 +1,6 @@
+2020/11/28-20:07:55.225 3444 Reusing MANIFEST C:\Users\serge\AppData\Local\Google\Chrome\User Data\Default\Local Storage\leveldb/MANIFEST-000001
+2020/11/28-20:07:55.227 3444 Recovering log #508
+2020/11/28-20:07:55.227 3444 Reusing old log C:\Users\serge\AppData\Local\Google\Chrome\User Data\Default\Local Storage\leveldb/000508.log 
+2020/11/28-20:17:40.130 13ac Level-0 table #512: started
+2020/11/28-20:17:40.143 13ac Level-0 table #512: 70542 bytes OK
+2020/11/28-20:17:40.150 13ac Delete type=0 #508

@@ -1,0 +1,67 @@
+<html>
+
+<head>
+  <link rel="stylesheet"
+        href="./popup.css">
+  <title>Connect to Ranorex Webtestit</title>
+</head>
+
+<body class="popup popup--webtestit-instructions">
+  <header class="popup__header">
+    <img src="../images/logo/rxselocity-logo-popup.svg"
+         alt="Selocity Logo">
+  </header>
+  <div class="popup__content">
+    <p class="popup__content-description">
+      <b class="popup__content-heading">How to connect Ranorex Selocity with Ranorex Webtestit</b>
+      <p>
+        In order to send an element selector directly from a web page to your Ranorex Webtestit project, you first need
+        to connect the app with Ranorex Selocity.
+      </p>
+      <div class="popup__content-image-holder">
+        <img class="popup__content-logo"
+             src="../images/popup/rxselocity-logo.svg"
+             alt="Selocity Logo">
+        <span class="popup__content-connection"></span>
+        <img class="popup__content-logo"
+             src="../images/popup/rxwebtestit-logo.svg"
+             alt="Webtestit Logo">
+      </div>
+      <ol class="popup__ordered-list">
+        <li class="popup__ordered-list-item"><span>Make sure Ranorex Webtestit is running and that a <b>Page Object file
+              is active.</b></span></li>
+        <li class="popup__ordered-list-item"><span>Open the <b>Chrome DevTools</b> by pressing <b>F12</b>.</span>
+        </li>
+        <li class="popup__ordered-list-item"><span>Find Ranorex Selocity on the right side of the <b>Elements tab</b>.
+            If not visible, reload the page or expand the DevTools window.</span></li>
+        <li class="popup__ordered-list-item"><span>Click the <b>'Connect'</b> button in the bottom of the Ranorex
+            Selocity tab.</span>
+          <div>
+            <img class="popup__content-gif popup__content-gif--large"
+                 src="../images/popup/connect.svg"
+                 alt="Connect and send Selector">
+          </div>
+        </li>
+        <li class="popup__ordered-list-item"><span>On your web page, <b>select the element</b> you want to send to
+            Ranorex Webtestit.</span></li>
+        <li class="popup__ordered-list-item"><span>Click the <b>'Send selector to Ranorex Webtestit'</b> button next to
+            the selector of your choice. The selected element will be added to the active Page Object in Ranorex
+            Webtestit.</span></li>
+      </ol>
+
+      <div>
+        <img class="popup__content-gif popup__content-gif--large"
+             src="../images/popup/get-selocity-send-selector.gif"
+             alt="Send selector">
+      </div>
+    </p>
+    <p class="popup__help-text">Need help?
+      <a href="https://www.ranorex.com/selocity/browser-extension/?utm_source=selocity-pop-up&utm_medium=referral&utm_campaign=en_get-started"
+         target="_blank"
+         class="popup__link"
+         tabindex="1">Get started!</a>
+    </p>
+  </div>
+</body>
+
+</html>

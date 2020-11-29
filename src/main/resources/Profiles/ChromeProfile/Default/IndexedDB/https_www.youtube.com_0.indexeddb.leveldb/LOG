@@ -1,0 +1,8 @@
+2020/11/28-18:06:23.316 299c Reusing MANIFEST C:\Users\serge\AppData\Local\Google\Chrome\User Data\Default\IndexedDB\https_www.youtube.com_0.indexeddb.leveldb/MANIFEST-000001
+2020/11/28-18:06:23.316 299c Recovering log #25
+2020/11/28-18:06:23.316 299c Reusing old log C:\Users\serge\AppData\Local\Google\Chrome\User Data\Default\IndexedDB\https_www.youtube.com_0.indexeddb.leveldb/000025.log 
+2020/11/28-18:12:04.910 299c Level-0 table #30: started
+2020/11/28-18:12:04.910 299c Level-0 table #30: 0 bytes OK
+2020/11/28-18:12:04.919 299c Delete type=0 #25
+2020/11/28-18:12:04.919 299c Manual compaction at level-0 from (begin) .. (end); will stop at (end)
+2020/11/28-18:12:04.919 299c Manual compaction at level-1 from (begin) .. (end); will stop at (end)

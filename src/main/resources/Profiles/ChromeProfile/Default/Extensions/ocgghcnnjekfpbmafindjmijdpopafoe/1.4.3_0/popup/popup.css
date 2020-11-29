@@ -1,0 +1,87 @@
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600");
+.popup {
+  border-radius: 2px;
+  display: block;
+  fill: solid;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 19px;
+  margin: 0;
+  padding: 0; }
+  .popup--limited {
+    width: 400px; }
+  .popup__footer-banner {
+    width: 100%; }
+  .popup__content-heading {
+    font-size: 18px; }
+  .popup__img-inline {
+    vertical-align: sub; }
+  .popup__ordered-list {
+    -webkit-padding-start: 30px;
+    margin-top: 0;
+    padding-inline-start: 25px;
+    padding-top: 5px; }
+    .popup__ordered-list img {
+      margin-left: 0; }
+  .popup__ordered-list-item {
+    font-weight: bold; }
+    .popup__ordered-list-item span {
+      font-weight: normal; }
+  .popup__header, .popup__content, .popup__footer {
+    padding: 10px; }
+  .popup__header {
+    padding-top: 15px; }
+  .popup__content-image-holder {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px; }
+  .popup__content-logo {
+    border: 2px solid #e5e5e5;
+    border-radius: 5px;
+    padding: 20px; }
+  .popup__content-connection {
+    -webkit-mask-image: url("../../images/icons/connection_animated.svg");
+    background-color: #008000;
+    display: inline-block;
+    height: 40px;
+    margin-left: 35px;
+    margin-right: 35px;
+    width: 40px; }
+  .popup__content-description {
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 19px;
+    margin-bottom: 0;
+    margin-top: 0; }
+  .popup__content-gif {
+    border: solid 1px #ccc;
+    display: block;
+    height: 168px;
+    margin: 10px auto;
+    width: 300px; }
+    .popup__content-gif--large {
+      height: auto;
+      margin: 10px auto;
+      width: 90%; }
+  .popup__link {
+    color: #2e86ab;
+    cursor: pointer; }
+    .popup__link:active, .popup__link:hover, .popup__link:link, .popup__link:visited {
+      color: #2e86ab; }
+  .popup__help-text {
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 19px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    text-align: center; }
+  .popup__content {
+    padding-bottom: 0; }
+  .popup__footer {
+    border-top: 1px solid #ccc;
+    padding-top: 10px;
+    text-align: center; }

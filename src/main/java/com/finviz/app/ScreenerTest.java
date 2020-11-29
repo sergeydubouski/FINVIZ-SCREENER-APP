@@ -16,7 +16,6 @@ import org.testng.annotations.Test;
  * */
 public class ScreenerTest {
 
-	@Test
 	public static void main(String[] args) throws IOException {
 
 		String[] industryArrParam = new String[] { "", "biotechnology", "gold","residentialconstruction","banksregional" ,"aerospacedefense"};// input industry parameters

@@ -1,0 +1,17 @@
+2020/11/28-20:26:26.990 3d4c Reusing MANIFEST C:\Users\serge\eclipse-workspace\screener-app\src\main\resources\Profiles\ChromeProfile\Default\IndexedDB\chrome-extension_mlomiejdfkolichcflejclcbmpeaniij_0.indexeddb.leveldb/MANIFEST-000001
+2020/11/28-20:26:26.991 3d4c Recovering log #429
+2020/11/28-20:26:26.993 3d4c Reusing old log C:\Users\serge\eclipse-workspace\screener-app\src\main\resources\Profiles\ChromeProfile\Default\IndexedDB\chrome-extension_mlomiejdfkolichcflejclcbmpeaniij_0.indexeddb.leveldb/000429.log 
+2020/11/28-20:26:27.081 3560 Level-0 table #436: started
+2020/11/28-20:26:27.099 3560 Level-0 table #436: 124973 bytes OK
+2020/11/28-20:26:27.108 3560 Delete type=0 #429
+2020/11/28-20:26:27.109 3560 Manual compaction at level-0 from '\x00n\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00o\x00\x00\x00' @ 0 : 0; will stop at (end)
+2020/11/28-20:26:29.609 2374 Compacting 1@1 + 3@2 files
+2020/11/28-20:26:29.684 2374 Generated table #437@1: 18192 keys, 2176878 bytes
+2020/11/28-20:26:29.778 2374 Generated table #438@1: 38608 keys, 2208560 bytes
+2020/11/28-20:26:29.824 2374 Generated table #439@1: 14250 keys, 962205 bytes
+2020/11/28-20:26:29.824 2374 Compacted 1@1 + 3@2 files => 5347643 bytes
+2020/11/28-20:26:29.832 2374 compacted to: files[ 0 0 3 0 0 0 0 ]
+2020/11/28-20:26:29.833 2374 Delete type=2 #431
+2020/11/28-20:26:29.833 2374 Delete type=2 #432
+2020/11/28-20:26:29.833 2374 Delete type=2 #433
+2020/11/28-20:26:29.833 2374 Delete type=2 #436
