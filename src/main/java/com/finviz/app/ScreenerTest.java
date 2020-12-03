@@ -22,12 +22,13 @@ public class ScreenerTest {
 		String[] rsiArrParam = new String[] { "", "ob90", "ob80", "ob70", "ob60", "os40", "os30", "os20", "os10" };
 
 		String[] industryArrOutput = new String[] { "ALL STOCK", "BIOTECHNOLOGY", "GOLD" ,"RESIDENTIAL CONSTRUCTION","BANKS-REGIONAL","AEROSPACE&DEFENSE"};// print industry parameters
-		String[] rsiArrOutput = new String[] { "Total:", "Rsi>90:", "Rsi>80:", "Rsi>70:", "Rsi>60:", "Rsi<40:",	"Rsi<30:", "Rsi<20:", "Rsi<10:" };// print rsi parameters
+		String[] rsiArrOutput = new String[] { "Total,", "Rsi>90,", "Rsi>80,", "Rsi>70,", "Rsi>60,", "Rsi<40,",	"Rsi<30,", "Rsi<20,", "Rsi<10," };// print rsi parameters
 
 
 		Report report;// write to file methods
-		String dir = "C://finviz reports";
-		String fileName = "finviz_report_" + Time.GetCurrentTimeStamp().replace(":", "_").replace(".", "_") + ".txt";
+		//String dir = "C://finviz reports";
+		String dir = "C:\\finviz reports";
+		String fileName = "finviz_report_" + Time.GetCurrentTimeStamp().replace(":", "_").replace(".", "_") + ".csv";
 		
 		UtilPageObject po = new UtilPageObject();// get page object methods
 		po.set_driver("chrome");
@@ -40,7 +41,8 @@ public class ScreenerTest {
 			po.wait("//select[@id='fs_ind']");
 			po.find_dropdown_list("//select[@id='fs_ind']");
 			po.set_option_from_dropdown_list(industryArrParam[i]);
-			report.writeToFile("\n" + industryArrOutput[i]);
+			//report.writeToFile("\n" + industryArrOutput[i]);
+			report.writeToFile(industryArrOutput[i]);
 			for (int j = 0; j < rsiArrParam.length; j++) {
 				po.wait("//select[@id='fs_ta_rsi']");
 				po.find_dropdown_list("//select[@id='fs_ta_rsi']");
@@ -49,12 +51,13 @@ public class ScreenerTest {
 				po.find_web_element("//div[@id='screener-content']/table/tbody/tr[3]/td/table//tr/td[1]");
 				String result[] = po.get_text().split(" ");
 				report.writeToFile(rsiArrOutput[j] + result[1]);
+				//report.writeToFile(result[1]);
 			}
 		}
 		report.close();//close buffered reader stream
 		po.driver.quit();
 
 	Runtime.getRuntime().exec("C:\\Windows\\notepad.exe " + dir + "\\" + fileName);
-		
+				
 	}
 }

@@ -34,8 +34,9 @@ public class Report {
 	// write to the .txt file
 	void writeToFile(String line) {
 		try {
-			this.bw.write(line);
 			this.bw.newLine();
+			this.bw.write(line);
+			//this.bw.newLine();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
