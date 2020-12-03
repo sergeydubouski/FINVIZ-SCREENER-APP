@@ -27,7 +27,7 @@ public class ScreenerTest {
 
 		Report report;// write to file methods
 		//String dir = "C://finviz reports";
-		String dir = "C:\\finviz reports";
+		String dir = "C:\\finviz_reports";
 		String fileName = "finviz_report_" + Time.GetCurrentTimeStamp().replace(":", "_").replace(".", "_") + ".csv";
 		
 		UtilPageObject po = new UtilPageObject();// get page object methods
@@ -58,6 +58,6 @@ public class ScreenerTest {
 		po.driver.quit();
 
 	Runtime.getRuntime().exec("C:\\Windows\\notepad.exe " + dir + "\\" + fileName);
-				
+	//Runtime.getRuntime().exec("cmd /c start excel.exe " + dir + "\\" + fileName);
 	}
 }
