@@ -1,5 +1,6 @@
 package com.finviz.app;
 
+import java.awt.Desktop;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -58,5 +59,15 @@ public class Report {
 	    int startIndex = s.indexOf(':');
 	    int endIndex = s.indexOf('#');
 		return s.substring(startIndex + 1, endIndex);
+	}
+	
+	/*open .csv file with excel*/
+	void openCsvInExcel(String file) {
+		try {
+			Desktop.getDesktop().open(new File(file));
+		} catch (IOException e) {
+			System.out.println("Cannot open a file!");
+			e.printStackTrace();
+		}
 	}
 }

@@ -1,11 +1,7 @@
 package com.finviz.app;
 
+import java.io.File;
 import java.io.IOException;
-
-import java.sql.Timestamp;
-import java.util.Date;
-
-import org.testng.annotations.Test;
 
 /**
  * class ScreenerTest
@@ -35,7 +31,7 @@ public class ScreenerTest {
 		po.go_to_url("https://finviz.com/screener.ashx?v=111&ft=4");
 
 		report = new Report(dir, fileName);// create a new folder(if it does not exist) and new report
-		report.writeToFile("FINVIZ.COM SCREENER REPORT\r" + "\stime: " +  Time.GetCurrentTimeStamp()); // write to the report
+		report.writeToFile("FINVIZ.COM SCREENER REPORT\r" + " time: " +  Time.GetCurrentTimeStamp()); // write to the report
 		
 		for (int i = 0; i < industryArrParam.length; i++) {
 			po.wait("//select[@id='fs_ind']");
@@ -57,7 +53,7 @@ public class ScreenerTest {
 		report.close();//close buffered reader stream
 		po.driver.quit();
 
-	Runtime.getRuntime().exec("C:\\Windows\\notepad.exe " + dir + "\\" + fileName);
-	//Runtime.getRuntime().exec("cmd /c start excel.exe " + dir + "\\" + fileName);
+	//Runtime.getRuntime().exec("C:\\Windows\\notepad.exe " + dir + "\\" + fileName);
+	report.openCsvInExcel(dir+File.separator+fileName);
 	}
 }
