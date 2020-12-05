@@ -15,9 +15,11 @@ public class ScreenerTest {
 	public static void main(String[] args) throws IOException {
 
 		String[] industryArrParam = new String[] { "", "biotechnology", "gold","residentialconstruction","banksregional" ,"aerospacedefense"};// input industry parameters
+		String[] tickerUrl=new String[] {"https://finviz.com/quote.ashx?t=spy","https://finviz.com/quote.ashx?t=XBI&ty=c&ta=1&p=d","https://finviz.com/quote.ashx?t=GDX&ty=c&ta=1&p=d","https://finviz.com/quote.ashx?t=ITB&ty=c&ta=1&p=d","https://finviz.com/quote.ashx?t=KBE&ty=c&ta=1&p=d","https://finviz.com/quote.ashx?t=XAR&ty=c&ta=1&p=d"};
 		String[] rsiArrParam = new String[] { "", "ob90", "ob80", "ob70", "ob60", "os40", "os30", "os20", "os10" };
 
 		String[] industryArrOutput = new String[] { "ALL STOCK", "BIOTECHNOLOGY", "GOLD" ,"RESIDENTIAL CONSTRUCTION","BANKS-REGIONAL","AEROSPACE&DEFENSE"};// print industry parameters
+		String[] tickerOutput=new String[] {"SPY","XBI","GDX","ITB","KBE","XAR"};
 		String[] rsiArrOutput = new String[] { "Total,", "Rsi>90,", "Rsi>80,", "Rsi>70,", "Rsi>60,", "Rsi<40,",	"Rsi<30,", "Rsi<20,", "Rsi<10," };// print rsi parameters
 
 
@@ -33,7 +35,7 @@ public class ScreenerTest {
 		report = new Report(dir, fileName);// create a new folder(if it does not exist) and new report
 		report.writeToFile("FINVIZ.COM SCREENER REPORT\r" + " time: " +  Time.GetCurrentTimeStamp()); // write to the report
 		
-		for (int i = 0; i < industryArrParam.length; i++) {
+		for (int i = 0; i < industryArrParam.length; i++) {			
 			po.wait("//select[@id='fs_ind']");
 			po.find_dropdown_list("//select[@id='fs_ind']");
 			po.set_option_from_dropdown_list(industryArrParam[i]);
@@ -49,6 +51,10 @@ public class ScreenerTest {
 				report.writeToFile(rsiArrOutput[j] + result[1]);
 				//report.writeToFile(result[1]);
 			}
+			po.go_to_url(tickerUrl[i]);
+			po.find_web_element("//td[.='Price']/following-sibling::td");
+			report.writeToFile(tickerOutput[i]+","+po.get_text());
+			po.go_to_url("https://finviz.com/screener.ashx?v=111&ft=4");
 		}
 		report.close();//close buffered reader stream
 		po.driver.quit();
