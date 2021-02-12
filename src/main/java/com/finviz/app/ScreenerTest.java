@@ -15,19 +15,20 @@ public class ScreenerTest {
 	public static void main(String[] args) throws IOException {
 
 		String[] industryArrParam = new String[] { "", "biotechnology", "gold", "residentialconstruction",
-				"banksregional", "aerospacedefense", "oilgasep" };// input industry parameters by value
+				"banksregional", "aerospacedefense", "oilgasep","semiconductors" };// input industry parameters by value
 		String[] tickerUrl = new String[] { "https://finviz.com/quote.ashx?t=spy",
 				"https://finviz.com/quote.ashx?t=XBI&ty=c&ta=1&p=d",
 				"https://finviz.com/quote.ashx?t=GDX&ty=c&ta=1&p=d",
 				"https://finviz.com/quote.ashx?t=ITB&ty=c&ta=1&p=d",
 				"https://finviz.com/quote.ashx?t=KBE&ty=c&ta=1&p=d",
 				"https://finviz.com/quote.ashx?t=XAR&ty=c&ta=1&p=d",
-				"https://finviz.com/quote.ashx?t=XLE" };
+				"https://finviz.com/quote.ashx?t=XLE" ,
+				"https://finviz.com/quote.ashx?t=smh"};
 		String[] rsiArrParam = new String[] { "", "ob90", "ob80", "ob70", "ob60", "os40", "os30", "os20", "os10" };
 
 		String[] industryArrOutput = new String[] { "ALL STOCK", "BIOTECHNOLOGY", "GOLD", "RESIDENTIAL CONSTRUCTION",
-				"BANKS-REGIONAL", "AEROSPACE&DEFENSE", "OIL AND GAS" };// print industry parameters
-		String[] tickerOutput = new String[] { "SPY", "XBI", "GDX", "ITB", "KBE", "XAR", "XLE" };
+				"BANKS-REGIONAL", "AEROSPACE&DEFENSE", "OIL AND GAS","SEMICONDUCTORS" };// print industry parameters
+		String[] tickerOutput = new String[] { "SPY", "XBI", "GDX", "ITB", "KBE", "XAR", "XLE" ,"SMH"};
 		String[] rsiArrOutput = new String[] { "Total,", "Rsi>90,", "Rsi>80,", "Rsi>70,", "Rsi>60,", "Rsi<40,",
 				"Rsi<30,", "Rsi<20,", "Rsi<10," };// print rsi parameters
 
