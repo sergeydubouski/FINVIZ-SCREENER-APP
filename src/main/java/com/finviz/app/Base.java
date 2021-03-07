@@ -7,6 +7,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class Base {
 
@@ -18,17 +19,20 @@ public class Base {
 			ChromeOptions option = new ChromeOptions();
 			option.addArguments("user-data-dir="+System.getProperty("user.home")+"/AppData/Local/Google/Chrome/User Data");
 			option.addArguments("-start-maximized");
-			System.setProperty("webdriver.chrome.driver", "C:/Tools/chromedriver.exe");			
-			this.driver = new ChromeDriver(option);	
+			WebDriverManager.chromedriver().setup();
+			//System.setProperty("webdriver.chrome.driver", "C:/Tools/chromedriver.exe");			
+			this.driver = new ChromeDriver(option);
 			break;
 		case "firefox":
-			System.setProperty("webdriver.gecko.driver", "src/main/resources/geckodriver.exe");
+			//System.setProperty("webdriver.gecko.driver", "src/main/resources/geckodriver.exe");
+			WebDriverManager.firefoxdriver().setup();			
 			this.driver = new FirefoxDriver();
 			break;
 		default:
 			ChromeOptions options = new ChromeOptions();
 			options.addArguments("user-data-dir=src/main/resources/Profiles/ChromeProfile");
-			System.setProperty("webdriver.chrome.driver", "C:/Tools/chromedriver.exe");			
+			WebDriverManager.chromedriver().setup();
+			//System.setProperty("webdriver.chrome.driver", "C:/Tools/chromedriver.exe");			
 			this.driver = new ChromeDriver(options);
 			break;
 		}
