@@ -8,9 +8,9 @@ import java.io.IOException;
  * 
  * @author SD
  * @version 1.0
- * @since 31-oct-20
+ * @since 13-Mar-21
  */
-public class ScreenerTest {
+public class ScreenerRun {
 
 	public static void main(String[] args) throws IOException {
 
