@@ -17,8 +17,9 @@ public class Base {
 		switch (browser) {
 		case "chrome":
 			ChromeOptions option = new ChromeOptions();
-			option.addArguments("user-data-dir="+System.getProperty("user.home")+"/AppData/Local/Google/Chrome/User Data");
-			option.addArguments("-start-maximized");
+			option.addArguments("user-data-dir="+System.getProperty("user.home")+"/AppData/Local/Google/Chrome/User Data");//run chrome with profile
+			//option.addArguments("-start-maximized");
+			option.addArguments("--headless");
 			WebDriverManager.chromedriver().setup();
 			//System.setProperty("webdriver.chrome.driver", "C:/Tools/chromedriver.exe");			
 			this.driver = new ChromeDriver(option);

@@ -2,6 +2,8 @@ package com.finviz.app;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * class ScreenerTest
@@ -24,14 +26,14 @@ public class ScreenerRun {
 				"https://finviz.com/quote.ashx?t=XAR&ty=c&ta=1&p=d",
 				"https://finviz.com/quote.ashx?t=XLE" ,
 				"https://finviz.com/quote.ashx?t=smh"};
-		String[] rsiArrParam = new String[] { "", "ob90", "ob80", "ob70", "ob60", "os40", "os30", "os20", "os10" };
-
+		String[] rsiArrParam = new String[] { "", "ob70", "ob60", "os40" };//Original below.
+		//String[] rsiArrParam = new String[] { "", "ob90", "ob80", "ob70", "ob60", "os40", "os30", "os20", "os10" };
+				
 		String[] industryArrOutput = new String[] { "ALL STOCK", "BIOTECHNOLOGY", "GOLD", "RESIDENTIAL CONSTRUCTION",
 				"BANKS-REGIONAL", "AEROSPACE&DEFENSE", "OIL AND GAS","SEMICONDUCTORS" };// print industry parameters
 		String[] tickerOutput = new String[] { "SPY", "XBI", "GDX", "ITB", "KBE", "XAR", "XLE" ,"SMH"};
-		String[] rsiArrOutput = new String[] { "Total,", "Rsi>90,", "Rsi>80,", "Rsi>70,", "Rsi>60,", "Rsi<40,",
-				"Rsi<30,", "Rsi<20,", "Rsi<10," };// print rsi parameters
-
+		String[] rsiArrOutput = new String[] { "Total,","GREED,", "POSITIVE,",  "NEUTRAL,", "NEGATIVE,"};// print rsi parameters. Same as rsiArrParam.Original below.
+		//String[] rsiArrOutput = new String[] { "Total,", "Rsi>90,", "Rsi>80,", "Rsi>70,", "Rsi>60,", "Rsi<40,","Rsi<30,", "Rsi<20,", "Rsi<10," };// print rsi parameters.Same as rsiArrParam
 		Report report;// write to file methods
 		// String dir = "C://finviz reports";
 		String dir = "C:\\finviz_reports";
@@ -42,8 +44,7 @@ public class ScreenerRun {
 		po.go_to_url("https://finviz.com/screener.ashx?v=111&ft=4");
 
 		report = new Report(dir, fileName);// create a new folder(if it does not exist) and new report
-		report.writeToFile("FINVIZ.COM SCREENER REPORT\r" + " time: " + Time.GetCurrentTimeStamp()); // write to the
-																										// report
+		report.writeToFile("FINVIZ.COM SCREENER REPORT\r" + " time: " + Time.GetCurrentTimeStamp()); // write to the report
 
 		for (int i = 0; i < industryArrParam.length; i++) {
 			po.wait("//select[@id='fs_ind']");
@@ -51,17 +52,28 @@ public class ScreenerRun {
 			po.set_option_from_dropdown_list(industryArrParam[i]);
 			// report.writeToFile("\n" + industryArrOutput[i]);
 			report.writeToFile(industryArrOutput[i]);
-			for (int j = 0; j < rsiArrParam.length; j++) {
+			List<Double> resultOut=new ArrayList();
+			for (int j = 0; j < rsiArrParam.length; j++) {				
 				po.wait("//select[@id='fs_ta_rsi']");
 				po.find_dropdown_list("//select[@id='fs_ta_rsi']");
 				po.set_option_from_dropdown_list(rsiArrParam[j]);
-				po.wait("//div[@id='screener-content']/table/tbody/tr[3]/td/table//tr/td[1]");// explicit wait for
-																								// visibility of the
-																								// result text
+				po.wait("//div[@id='screener-content']/table/tbody/tr[3]/td/table//tr/td[1]");// explicit wait for visibility of the result text
 				po.find_web_element("//div[@id='screener-content']/table/tbody/tr[3]/td/table//tr/td[1]");
 				String result[] = po.get_text().split(" ");
-				report.writeToFile(rsiArrOutput[j] + result[1]);
-				// report.writeToFile(result[1]);
+				resultOut.add(Double.valueOf(result[1]));//new line
+				/*write a report*/
+					switch(j) {
+					case 0: report.writeToFile(rsiArrOutput[j] + resultOut.get(0));//total
+								break;
+					case 1: report.writeToFile(rsiArrOutput[j] + resultOut.get(1)/resultOut.get(0)*100);
+								break;
+					case 2: report.writeToFile(rsiArrOutput[j] + (resultOut.get(2)-resultOut.get(1))/resultOut.get(0)*100);//positive momentum
+								break;
+					case 3: report.writeToFile(rsiArrOutput[j] + (resultOut.get(0)-resultOut.get(2)-resultOut.get(3))/resultOut.get(0)*100);//neutral
+								report.writeToFile(rsiArrOutput[j+1] +resultOut.get(3)/resultOut.get(0)*100);//negative momentum		
+								break;
+					}
+				//report.writeToFile(rsiArrOutput[j] + result[1]);// report.writeToFile(result[1]);
 			}
 			po.go_to_url(tickerUrl[i]);
 			po.find_web_element("//td[.='Price']/following-sibling::td");
