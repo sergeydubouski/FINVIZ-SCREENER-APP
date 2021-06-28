@@ -4,7 +4,7 @@ import java.io.File;
 import java.io.IOException;
 
 /**
- * class ScreenerTest
+ * class ScreenerRun
  * 
  * @author SD
  * @version 1.0
@@ -15,7 +15,7 @@ public class ScreenerRun {
 	public static void main(String[] args) throws IOException {
 
 		String[] industryArrParam = new String[] { "", "biotechnology", "gold", "residentialconstruction",
-				"banksregional", "aerospacedefense", "oilgasep","semiconductors" };// input industry parameters by value
+				"banksregional", "aerospacedefense", "oilgasep","semiconductors","utilitiesregulatedelectric" };// input industry parameters by value
 		String[] tickerUrl = new String[] { "https://finviz.com/quote.ashx?t=spy",
 				"https://finviz.com/quote.ashx?t=XBI&ty=c&ta=1&p=d",
 				"https://finviz.com/quote.ashx?t=GDX&ty=c&ta=1&p=d",
@@ -23,12 +23,13 @@ public class ScreenerRun {
 				"https://finviz.com/quote.ashx?t=KBE&ty=c&ta=1&p=d",
 				"https://finviz.com/quote.ashx?t=XAR&ty=c&ta=1&p=d",
 				"https://finviz.com/quote.ashx?t=XLE" ,
-				"https://finviz.com/quote.ashx?t=smh"};
+				"https://finviz.com/quote.ashx?t=smh",
+				"https://finviz.com/quote.ashx?t=xlu"};
 		String[] rsiArrParam = new String[] { "", "ob90", "ob80", "ob70", "ob60", "os40", "os30", "os20", "os10" };
 
 		String[] industryArrOutput = new String[] { "ALL STOCK", "BIOTECHNOLOGY", "GOLD", "RESIDENTIAL CONSTRUCTION",
-				"BANKS-REGIONAL", "AEROSPACE&DEFENSE", "OIL AND GAS","SEMICONDUCTORS" };// print industry parameters
-		String[] tickerOutput = new String[] { "SPY", "XBI", "GDX", "ITB", "KBE", "XAR", "XLE" ,"SMH"};
+				"BANKS-REGIONAL", "AEROSPACE&DEFENSE", "OIL AND GAS","SEMICONDUCTORS","UTILITIES" };// print industry parameters
+		String[] tickerOutput = new String[] { "SPY", "XBI", "GDX", "ITB", "KBE", "XAR", "XLE" ,"SMH","XLU"};
 		String[] rsiArrOutput = new String[] { "Total,", "Rsi>90,", "Rsi>80,", "Rsi>70,", "Rsi>60,", "Rsi<40,",
 				"Rsi<30,", "Rsi<20,", "Rsi<10," };// print rsi parameters
 
